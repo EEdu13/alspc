@@ -45,7 +45,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
         return token
       }
 
-      if (token.expiresAt && Date.now() / 1000 < token.expiresAt - 60) {
+      if (token.expiresAt && Date.now() / 1000 < (token.expiresAt as number) - 60) {
         return token
       }
 
