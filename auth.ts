@@ -55,7 +55,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
       }
 
       try {
-        const refreshed = await refreshGoogleAccessToken(token.refreshToken)
+        const refreshed = await refreshGoogleAccessToken(token.refreshToken as string)
         token.accessToken = refreshed.accessToken
         token.expiresAt = refreshed.expiresAt
         token.refreshToken = refreshed.refreshToken
